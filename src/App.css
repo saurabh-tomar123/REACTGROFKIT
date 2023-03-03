@@ -36,3 +36,72 @@
     transform: rotate(360deg);
   }
 }
+.search{
+  position: absolute;
+    top: 31px;
+    right: 83px;
+    text-align: center;
+    width: 200px;
+
+}
+.img{
+  position: absolute;
+    right: 236px;
+    top: 36px;
+    height: 19px;
+    z-index: 9999;
+}
+.list{
+  background-color: yellowgreen;
+  color: white;
+  position: absolute;
+  top: 80px;
+  border-radius: 20px;
+  border: 2px solid yellow;
+  right: 138px;
+  width: 228px;
+  padding: 10px;
+  z-index: 9999;
+}
+.srchlist{
+  position: absolute;
+    background-color: yellowgreen;
+    width: 549px;
+    border: 2px solid yellow;
+    border-radius: 20px;
+    /* height: 500px; */
+    z-index: 99999;
+    top: 80px;
+    right: 300px;
+}
+.bttn{
+  position: absolute;
+    top: 31px;
+    right: 253px;
+    background-color: yellowgreen;
+    color: white;
+}
+.bttn1{
+  position: absolute;
+    top: 31px;
+    right: 350px;
+    background-color: yellowgreen;
+    color: white;
+}
+.bttn2{
+  position: absolute;
+    top: 31px;
+    right: 350px;
+    /* background-color: yellowgreen; */
+    color: blue;
+}
+.bttn3{
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  /* background-color: yellowgreen; */
+  color:blue;
+}
+.img11{
+ height:300px; 
+}
