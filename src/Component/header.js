@@ -65,7 +65,7 @@ function Header(props)
         <div className="App">
           
         <header style={{ backgroundColor:"#c0ff41",height:"80px",width:"100%"}}>
-          <h1 style={{color:"green",textAlign:"left",paddingTop:"15px" }}>GrOfKiT</h1>
+          <NavLink  to="/"><h1 style={{color:"green",textAlign:"left",paddingTop:"15px" }}>GrOfKiT</h1></NavLink>
          <input className="search" type="search" placeholder="Search here..." value={search} onChange={(e)=>setSearch(e.target.value)}   />
          <NavLink style={{color:'blue',position:"absolute",top:"31px",right:"0px"}} onClick={()=>categories()}>Categories</NavLink>
          <NavLink to="/profile" style={{color:'blue',position:"absolute",top:"55px",right:"0px"}} >My Profile</NavLink>
@@ -91,7 +91,7 @@ function Header(props)
           <table key={i}>
             <tbody>
               <tr>
-                <td> <Link to={`/category/${items.name}`} >{items.name}</Link> <img src={items.icon}style={{height:"50px"}}/></td> 
+                <td> <Link to={`/category/${items.name}`} >{items.name}</Link> <img src={items.icon}style={{padding:"1px",position:"absolute",right:"25px",height:"50px"}}/></td> 
               </tr>
             </tbody>
           </table>

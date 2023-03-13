@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { Fragment,useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom";
 
 import '../CSS/style.css'
 import BuyNow from './BuyNow'
@@ -12,6 +13,8 @@ import image8 from '../Image/8.png'
 
 function GetProducts(props)
 {
+    
+    const naviagte=useNavigate()
     const [data,setData]=useState([]);
     const [productId,setProductId]=('')
 
@@ -31,6 +34,7 @@ function SendData(item)
 {
     // setProductId(item.productId)
    props.user(item)
+   naviagte("/buy")
     // props.user.setter(item)
 }
 
@@ -68,12 +72,12 @@ useEffect(()=>{ProductList()},[]);
 {/* <button onClick={()=>ProductList()}>click</button> */}
     {
      data && data.map((item,i)=>
-     <div key={i} className="dv2" >    
+     <div key={i} className="dv2" onClick={()=>SendData(item)}>    
       <img src={item.productImage} style={{height:"200px"}}/>
       {/* <p>{item.brandName}</p> */}
       <p style={{color:"green"}}>Discount:{item.discount}</p>
       <p style={{color:"red"}}> price :{item.discount_price}</p>
-      <p className="p1"><NavLink to="/buy" onClick={()=>SendData(item)}>{item.productName}</NavLink><br/>Selling price :<strike style={{color:"red"}}>{item.selling_price}</strike> </p>
+      <p className="p1"><NavLink to="/buy" >{item.productName}</NavLink><br/>Selling price :<strike style={{color:"red"}}>{item.selling_price}</strike> </p>
      </div>)   
     }
    </Fragment>

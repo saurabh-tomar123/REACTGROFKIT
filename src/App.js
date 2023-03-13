@@ -15,6 +15,7 @@ import SelectCategory from './Component/SelectCategory';
 function App() {
   const [data,setData]=useState([])
   const [category,setCategory]=useState('')
+  const [login,setLogin]=useState(false)
   function setter(item)
   { 
  setData(item)
@@ -23,7 +24,10 @@ function App() {
   {
    setCategory(item)
   }
-  
+  function loginStatus(status)
+  {
+  setLogin(status)
+  }
   return (
     <div className="App">
      
@@ -39,7 +43,7 @@ function App() {
       {/* <Route path="/product" element={<div></div>}/> */}
       <Route path="/profile" element={<div><Myprofile/></div>}/>
       <Route path="/register" element={<div><Register/></div>}/>
-      <Route path="/login" element={<div><Login/></div>}/>
+      <Route path="/login" element={<div><Login data={loginStatus}/></div>}/>
      
        <Route path="/buy" element={<div><BuyNow Id={data}/></div>}/>
        <Route path="/category/:productName" element={<div><SelectCategory data={getter}/></div>}/>

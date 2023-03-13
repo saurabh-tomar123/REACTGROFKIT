@@ -122,7 +122,6 @@ function CallAgain(){
           //    }
            }))
   }
-  
     return(
         <div>
           <Header />
@@ -138,7 +137,6 @@ function CallAgain(){
               <p>product Description :{item.productDescription}</p>
               <button style={{border:"2px solid red",borderRadius:"15px",color:"green",backgroundColor:"yellow",width:"150px"}} onClick={()=>toast.success("Added Successfully")}>Add to cart</button>
               <button style={{border:"2px solid red",borderRadius:"15px",color:"green",backgroundColor:"yellow",width:"150px",marginLeft:"10px"}}>Buy Now</button>
-          
               </div>:
               <div style={{width:"400px",width: "400px",position: "absolute",left: "350px",top:"175px"}}>
               <p> price :{productData.discount_price}</p>
@@ -183,8 +181,10 @@ function CallAgain(){
     {
     productData &&  (
     <Helmet>
-        {/* <title>{`${productData.title}`}</title> */}
-      {/* <meta name="description" content={productData.description} /> */}
+      {/* {`${productData.title}`} put it place of grofkit */}
+        <title>grofkit</title>
+                                          {/* {productData.description} */}
+      <meta name="description" content="server side rendoring by saurabh" />
 
       <meta property="og:title" content={productData.productImages?.productId} />
 
@@ -206,7 +206,7 @@ function CallAgain(){
     )}
     <div style={{position:"absolute",left: "648px",top: "379px",display:"inline-flex"}}>
  <img style={{width:"30%"}} src={productData.productImages?.productImage}/>
- <FacebookShareButton style={{margin:"10px"}} url={window.location.href}><FacebookIcon size={40} /></FacebookShareButton>
+ <FacebookShareButton style={{margin:"10px"}} url={window.location.href}><FacebookIcon size={40} round/></FacebookShareButton>
   <TwitterShareButton style={{margin:"10px"}} url={window.location.href}><TwitterIcon size={40} round /></TwitterShareButton>
   <LinkedinShareButton style={{margin:"10px"}} url={window.location.href}><LinkedinIcon size={40} round /></LinkedinShareButton>
   </div>
