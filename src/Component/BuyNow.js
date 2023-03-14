@@ -20,6 +20,7 @@ function BuyNow(props){
     const [state,setState]=useState(true)
     const [data,setData]=useState([]);
     const [data2,setData2]=useState([])
+    const [refresh,setRefresh]=useState('')
     const [productData,setProductData]=useState({productName:'',discount:'',discount_price:'',selling_price:'',productDescription:''})
     const [list,setList]=useState(false)
     const item=props.Id
@@ -29,6 +30,8 @@ function BuyNow(props){
         console.log("=======>19",props.Id.productId)
        const productId=localStorage.getItem('item')
         console.log({productId})
+        setRefresh(productId)
+
         fetch("https://admin.grofkit.com/v1/product/details",{
             method:'POST',
             headers: {
@@ -41,6 +44,9 @@ function BuyNow(props){
                 setImage(result.response.productImages[0].productImage)
                 CallAgain()
                 SendData()
+
+              
+               
             //   if(result.response?.message?.successMessage){
             //     toast.success(result.response.message.successMessage)
             //   }
@@ -60,8 +66,9 @@ function BuyNow(props){
              body:JSON.stringify({productId})}).then((res)=>res.json().then((result)=>
              {
                 console.log(result)
-              setImage(result.response.productImages[0].productImage)
-              SendData()
+              setImage(result.response.productImages[0].productImage) 
+              CallAgain()
+              
              }))
     }  
         }
@@ -122,6 +129,9 @@ function CallAgain(){
           //    }
            }))
   }
+
+const i=1
+console.log("META URL==============--------->",image)
     return(
         <div>
           <Header />
@@ -151,12 +161,12 @@ function CallAgain(){
               <div style={{position: "absolute",top:"450px"}}>
               {
      data && data.map((item,i)=>
-     <div key={i} className="dv6" >    
-      <img src={item.productImage} style={{height:"200px"}}/>
+     <div key={i} className="dv6" onClick={()=>SendData(item)} >    
+      <img src={item.productImage} style={{height:"200px"}} />
       {/* <p>{item.brandName}</p> */}
       <p style={{color:"green"}}>Discount:{item.discount}</p>
       <p style={{color:"red"}}> price :{item.discount_price}</p>
-      <p className="p1"><NavLink to="/buy" onClick={()=>SendData(item)}>{item.productName}</NavLink><br/>Selling price :<strike style={{color:"red"}}>{item.selling_price}</strike> </p>
+      <p className="p1"><NavLink to="/buy" >{item.productName}</NavLink><br/>Selling price :<strike style={{color:"red"}}>{item.selling_price}</strike> </p>
      </div>)   
     }
               </div>
@@ -188,20 +198,17 @@ function CallAgain(){
 
       <meta property="og:title" content={productData.productImages?.productId} />
 
-      <meta property="og:image" content={productData.productImages?.productImage} />
-      <meta
-        property="og:url"
-        content={window.location.href }
-      />
+      <meta property="og:image" content={image} />                                           {/*  */}
+      <meta  property="og:url"  content={window.location.href }/>
      <meta name="twitter:card"  content="summary_large_image" />
 
 <meta
   property="og:description"
   content="Offering tour packages for individuals or groups."
 />
-<meta property="og:image" content={productData.productImages?.productImage}/>
+<meta property="og:image" content={image}/>
 <meta property="og:site_name" content="European Travel, Inc." />
-<meta name="twitter:image" content={productData.productImages?.productImage} />
+<meta name="twitter:image" content={image} />
     </Helmet>
     )}
     <div style={{position:"absolute",left: "648px",top: "379px",display:"inline-flex"}}>
