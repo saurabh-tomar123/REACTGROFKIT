@@ -10,6 +10,7 @@ function Login(props){
     const [state,setState]=useState(false)
     const [mobileNo,setMobile]=useState('')
     const [password,setPassword]=useState('')
+    
     function loginCred()
     {
         let data=({mobileNo,password,deviceType:1})
@@ -50,8 +51,9 @@ function Login(props){
     return(
         <div >
           <Header/>
+          
+            
             <img src={image11} className="img11"/>
-           
            <center>
             <div  style={{marginTop:"20px" ,borderRadius:"20px", height:"200px",width:"300px", border:"2px solid red",backgroundColor:"silver"}}>
 

@@ -12,6 +12,9 @@ import BuyNow from './Component/BuyNow';
  import React,{useState} from 'react';
 import Footer from './Component/Footer';
 import SelectCategory from './Component/SelectCategory';
+import HomeContainer from './Container/HomeContainer'
+import HeaderContainer from './Container/HeaderContainer'
+
 function App() {
   const [data,setData]=useState([])
   const [category,setCategory]=useState('')
@@ -46,6 +49,7 @@ function App() {
       <Route path="/login" element={<div><Login data={loginStatus}/></div>}/>
      
        <Route path="/buy" element={<div><BuyNow Id={data}/></div>}/>
+       <Route path="/redux" element={<div><HeaderContainer /><HomeContainer /></div>}/>
        <Route path="/category/:productName" element={<div><SelectCategory data={getter}/></div>}/>
 
    
