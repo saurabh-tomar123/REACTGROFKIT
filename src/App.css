@@ -52,14 +52,15 @@
     z-index: 9999;
 }
 .list{
-  background-color: yellowgreen;
-  color: white;
+  background-color: white;
+  color: yellowgreen;
   position: absolute;
   top: 80px;
   border-radius: 20px;
   border: 2px solid yellow;
   right: 138px;
-  width: 300px;
+  width: 350px;
+  height: 350px;
   padding: 10px;
   z-index: 9999;
 }

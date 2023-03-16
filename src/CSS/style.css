@@ -12,8 +12,8 @@
     background-color: rgb(179, 255, 0);
 }
 .dv2:hover{
-    border:2px solid rgb(231, 148, 70);
-    background-color: rgb(179, 255, 0);
+    border:2px solid red;
+    /* background-color: rgb(179, 255, 0); */
 }
 .dv6:hover{
     border:2px solid rgb(231, 148, 70);
@@ -33,7 +33,7 @@ z-index:9999;
 height:400px;
 width:400px;
 /* background-color:greenyellow; */
-border:2px solid yellow;
+border:2px solid yellowgreen;
 border-radius:20px;
 display:inline-block;
 margin:4px;

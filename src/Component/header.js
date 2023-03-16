@@ -91,7 +91,7 @@ function Header(props)
           <table key={i}>
             <tbody>
               <tr>
-                <td> <Link to={`/category/${items.name}`} >{items.name}</Link> <img src={items.icon}style={{padding:"1px",position:"absolute",right:"25px",height:"50px"}}/></td> 
+                <td > <Link  to={`/category/${items.name}`} >{items.name}</Link> <img src={items.icon}style={{padding:"1px",position:"absolute",right:"25px",width:"40px"}}/></td> 
               </tr>
             </tbody>
           </table>

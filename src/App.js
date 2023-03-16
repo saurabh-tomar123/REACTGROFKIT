@@ -46,8 +46,7 @@ function App() {
       {/* <Route path="/product" element={<div></div>}/> */}
       <Route path="/profile" element={<div><Myprofile/></div>}/>
       <Route path="/register" element={<div><Register/></div>}/>
-      <Route path="/login" element={<div><Login data={loginStatus}/></div>}/>
-     
+      <Route path="/login" element={<div><Login data={loginStatus}/></div>}/> 
        <Route path="/buy" element={<div><BuyNow Id={data}/></div>}/>
        <Route path="/redux" element={<div><HeaderContainer /><HomeContainer /></div>}/>
        <Route path="/category/:productName" element={<div><SelectCategory data={getter}/></div>}/>
